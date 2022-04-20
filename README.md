@@ -5,6 +5,7 @@
 >>**[Eric Dürr Sierra](alu0101027005@ull.edu.es)** - **Última modificación**: 21/04/2022
 
 [![Coverage Status](https://coveralls.io/repos/github/Eric-Durr/PE103-2104/badge.svg?branch=master)](https://coveralls.io/github/Eric-Durr/PE103-2104?branch=master)
+
 ***
 
 ## [Enlace a la documentación generada con TypeDoc](http://dsi-pe103-21-04-code-docs.surge.sh/modules.html)
