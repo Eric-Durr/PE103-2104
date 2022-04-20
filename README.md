@@ -5,6 +5,7 @@
 >>**[Eric Dürr Sierra](alu0101027005@ull.edu.es)** - **Última modificación**: 21/04/2022
 
 [![Coverage Status](https://coveralls.io/repos/github/Eric-Durr/PE103-2104/badge.svg?branch=master)](https://coveralls.io/github/Eric-Durr/PE103-2104?branch=master)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Eric-Durr_PE103-2104&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Eric-Durr_PE103-2104)
 
 ***
 
