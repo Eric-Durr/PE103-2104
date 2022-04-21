@@ -4,7 +4,7 @@ export default abstract class FilterMapReduce {
   private _callback: Function;
 
   constructor(
-    array: number[] = [],
+    array: number[],
     predicate: Function = (el: number) => el > 0,
     callback: Function = (el: number, inx?: number) => el,
     ) {
@@ -17,17 +17,8 @@ export default abstract class FilterMapReduce {
 
   set array(value: number[]) { this._array = value; }
 
-
-  get predicate(): Function {
-    return this._predicate;
-  }
-
   set predicate(value: Function) {
     this._predicate = value;
-  }
-
-  get callback(): Function {
-    return this._callback;
   }
 
   set callback(value: Function) {
