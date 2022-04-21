@@ -1,8 +1,16 @@
 export default abstract class FilterMapReduce {
   protected _array: number[];
+  protected readonly _predicate: Function;
+  protected readonly _callback: Function;
 
-  constructor(array: number[] = []) {
+  constructor(
+    array: number[] = [],
+    predicate: Function = (el: number) => el > 0,
+    callback: Function = (el: number, inx?: number) => el,
+    ) {
     this._array = array;
+    this._predicate = predicate;
+    this._callback = callback;
   }
 
 
@@ -20,21 +28,21 @@ export default abstract class FilterMapReduce {
   }
 
   // Algorithm predefined steps
-  protected filter(predicate: Function = (el: number) => el > 0 ): number[] {
+  protected filter(): number[] {
     const resultArray: number[] = [];
     this._array.forEach((num) => {
-      if(predicate(num)) {
+      if(this._predicate(num)) {
         resultArray.push(num);
       }
     })
     return resultArray;
   }
 
-  protected map(callback: Function = (el: number, inx?: number) => el): number[] {
+  protected map(): number[] {
     const resultArray = [];
 
     for (let i = 0; i < this.array.length; i++) {
-      resultArray[i] = callback(this.array[i], i);
+      resultArray[i] = this._callback(this.array[i], i);
     }
 
     return resultArray;
@@ -44,7 +52,7 @@ export default abstract class FilterMapReduce {
   protected abstract reduce(): number
 
   // hooks
-  public postFilterEvaluation() {}
-  public postMapEvaluation() {}
-  public preReduceEvaluation() {}
+  protected postFilterEvaluation() {}
+  protected postMapEvaluation() {}
+  protected preReduceEvaluation() {}
 }
