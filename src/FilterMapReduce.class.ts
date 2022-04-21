@@ -1,7 +1,7 @@
 export default abstract class FilterMapReduce {
   protected _array: number[];
-  protected readonly _predicate: Function;
-  protected readonly _callback: Function;
+  private _predicate: Function;
+  private _callback: Function;
 
   constructor(
     array: number[] = [],
@@ -13,10 +13,26 @@ export default abstract class FilterMapReduce {
     this._callback = callback;
   }
 
-
   get array(): number[] { return this._array; }
 
   set array(value: number[]) { this._array = value; }
+
+
+  get predicate(): Function {
+    return this._predicate;
+  }
+
+  set predicate(value: Function) {
+    this._predicate = value;
+  }
+
+  get callback(): Function {
+    return this._callback;
+  }
+
+  set callback(value: Function) {
+    this._callback = value;
+  }
 
   public run(): number {
     this.array = this.filter();
